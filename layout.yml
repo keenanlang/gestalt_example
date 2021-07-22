@@ -1,0 +1,51 @@
+clear_label:
+    background: $00000000
+
+clear_coloring: &clear_back
+    foreground: $0A00B8
+    background: $00000000
+    
+    alignment: Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter
+    
+clear_lineedit:
+    <<: *clear_back
+    colorMode: caLineEdit::Static
+    geometry: 80x18
+    
+    
+blue_coloring: &blue_back
+    foreground: $000000
+    background: $73DFFF
+    geometry: 80x20
+    
+blue_menu:
+    <<: *blue_back
+    
+    colorMode: caMenu::Static
+    
+blue_entry:
+    <<: *blue_back
+    
+    colorMode: caLineEdit::Static
+    geometry: 60x20
+
+    
+gray_coloring:
+    foreground: $0A00B8
+    background: $464646
+    
+    colorMode: caLineEdit::Alarm_Static
+    alignment: Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter
+    geometry: 80x18
+    
+    
+rel_displays:
+    foreground: $000000
+    background: $73DFFF
+    
+    label: -More
+    stackingMode: !enum Menu
+    removeParent: false
+    
+    geometry: 60x20
+    
