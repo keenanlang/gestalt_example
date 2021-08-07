@@ -12,41 +12,11 @@ a_display.addChild( Gestalt.Widget("caLabel", layout=styles["clear_coloring"])
 	.setProperties( geometry="935x25", text="$(P) Common Plugins")
 	.position(0, 6) )
 
-a_display.addChild( Gestalt.Widget("caLabel", layout=styles["clear_label"])
-	.setProperties(geometry="110x20", text="Plugin Name")
-	.position(10, 40) )
-
-a_display.addChild( Gestalt.Widget("caLabel", layout=styles["clear_label"])
-	.setProperties(geometry="110x20", text="Plugin Type")
-	.position(150, 40) )
-
-a_display.addChild( Gestalt.Widget("caLabel", layout=styles["clear_label"])
-	.setProperties(geometry="40x20", text="Port")
-	.position(300, 40) )
-
-a_display.addChild( Gestalt.Widget("caLabel", layout=styles["clear_label"])
-	.setProperties(geometry="60x20", text="Enable")
-	.position(407, 40) )
-
-a_display.addChild( Gestalt.Widget("caLabel", layout=styles["clear_label"])
-	.setProperties(geometry="80x20", text="Blocking")
-	.position(525, 40) )
-
-a_display.addChild( Gestalt.Widget("caLabel", layout=styles["clear_label"])
-	.setProperties(geometry="70x20", text="Dropped")
-	.position(615, 40) )
-
-a_display.addChild( Gestalt.Widget("caLabel", layout=styles["clear_label"])
-	.setProperties(geometry="40x20", text="Free")
-	.position(730, 40) )
-
-a_display.addChild( Gestalt.Widget("caLabel", layout=styles["clear_label"])
-	.setProperties(geometry="40x20", text="Rate")
-	.position(800, 40) )
+a_display.addChild( styles["UIHeader"].position(0, 40) )
 
 y_val = 71
 
-for row in Data.rows("data.xlsx"):
+for row in Spreadsheet.rows("data.xlsx"):
 	
 	#Plugin Name
 	a_display.addChild( Gestalt.Widget("caLineEdit", layout=styles["clear_lineedit"])

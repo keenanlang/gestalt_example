@@ -49,3 +49,48 @@ rel_displays:
     
     geometry: 60x20
     
+
+
+UIHeader: !group
+    geometry: 840x20
+    
+    children:
+        - !caLabel
+            background: $00000000
+            geometry: 10x0 x 110x20
+            text: "Plugin Name"
+            
+        - !caLabel
+            background: $00000000
+            geometry: 150x0 x 110x20
+            text: "Plugin Type"
+            
+        - !caLabel
+            background: $00000000
+            geometry: 300x0 x 40x20
+            text: "Port"
+        
+        - !caLabel
+            background: $00000000
+            geometry: 407x0 x 60x20
+            text: "Enable"
+            
+        - !caLabel
+            background: $00000000
+            geometry: 525x0 x 80x20
+            text: "Blocking"
+            
+        - !caLabel
+            background: $00000000
+            geometry: 615x0 x 70x20
+            text: "Dropped"
+            
+        - !caLabel
+            background: $00000000
+            geometry: 730x0 x 40x20
+            text: "Free"
+            
+        - !caLabel
+            background: $00000000
+            geometry: 800x0 x 40x20
+            text: "Rate"
