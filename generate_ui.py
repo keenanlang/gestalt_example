@@ -6,7 +6,7 @@ from gestalt import *
 
 styles = Stylesheet.parse("layout.yml")
 
-a_display = Gestalt.Display()
+a_display = Gestalt.Display(layout=styles["main_window"])
 
 a_display.addChild( Gestalt.Widget("caLabel", layout=styles["clear_coloring"])
 	.setProperties( geometry="935x25", text="$(P) Common Plugins")
@@ -16,10 +16,12 @@ a_display.addChild( styles["UIHeader"].position(0, 40), macros={ 'text': "Plugin
 
 y_val = 71
 
-for row in Spreadsheet.rows("data.csv"):	
-	a_display.addChild(styles["UIRow"].position(0, y_val), macros=row)
+for row in Spreadsheet.rows("data.csv"):
 	
-	y_val += 25
+	if row["Used"] == "x":
+		a_display.addChild(styles["UIRow"].position(0, y_val), macros=row)
+	
+		y_val += 25
 	
 	
 a_display.setProperty("geometry", Type.Rect(935, y_val))
