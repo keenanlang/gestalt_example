@@ -1,7 +1,9 @@
 Used,  Instance,     Displays,          Args
  x,     image1,    NDStdArrays.ui,    "P=$(P),R=image1:"
-  ,     Pva1,      NDPva.ui,          "P=$(P),R=Pva1:"
- x,     Proc1,     NDProcess.ui,      "P=$(P),R=Proc1:"
+  ,     image2,    NDStdArrays.ui,    "P=$(P),R=image2:"
+  ,     Stitcher1, NDGather8.ui,      "P=$(P),R=Stitcher1:"
+ x,     Pva1,      NDPva.ui,          "P=$(P),R=Pva1:"
+  ,     Proc1,     NDProcess.ui,      "P=$(P),R=Proc1:"
  x,     Trans1,    NDTransform.ui,    "P=$(P),R=Trans1:"
  x,     CC1,       NDColorConvert.ui, "P=$(P),R=CC1:"
  x,     CC2,       NDColorConvert.ui, "P=$(P),R=CC2:"
@@ -34,4 +36,4 @@ Used,  Instance,     Displays,          Args
  x,     Sparse1,   NDSparse.ui,       "P=$(P),R=Sparse1:"
  x,     Sparse2,   NDSparse.ui,       "P=$(P),R=Sparse2:"
  x,     Sparse3,   NDSparse.ui,       "P=$(P),R=Sparse3:"
- x,     Stitcher1, NDGather8.ui,      "P=$(P),R=Stitcher1:"
+ x,     IMM1,     NDFileIMM.ui,      "P=$(P),R=IMM1:"

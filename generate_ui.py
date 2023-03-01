@@ -8,20 +8,18 @@ styles = Stylesheet.parse("layout.yml")
 
 a_display = Gestalt.Display(layout=styles["main_window"])
 
-a_display.addChild( Gestalt.Widget("caLabel", layout=styles["clear_coloring"])
-	.setProperties( geometry="935x25", text="$(P) Common Plugins")
-	.position(0, 6) )
+a_display.addChild( styles["UILabel"])
+a_display.addChild( styles["UIHeader"])
 
-a_display.addChild( styles["UIHeader"].position(0, 40), macros={ 'text': "Plugin Type" })
 
-y_val = 71
+y_val = styles["UIHeader"]["geometry"]["y"] + 30
 
 for row in Spreadsheet.rows("data.csv"):
 	
 	if row["Used"] == "x":
 		a_display.addChild(styles["UIRow"].position(0, y_val), macros=row)
 	
-		y_val += 25
+		y_val += styles["UIRow"]["geometry"]["height"]
 	
 	
 a_display.setProperty("geometry", Type.Rect(935, y_val))

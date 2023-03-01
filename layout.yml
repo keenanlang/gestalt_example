@@ -1,64 +1,61 @@
+#include colors.yml
+#include widgets.yml
+
 main_window:
     styleSheet: !string "QWidget#Form {background: rgba(187, 187, 187, 255);}"
 
-clear_coloring: &clear
-    foreground: $0A00B8
-    background: $00000000
     
+UILabel: !caLabel
+    geometry: 0x6 x 935x25
+
+    foreground: *black
+    background: *transparent
     alignment: Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter    
     
-blue_coloring: &blue
-    foreground: $000000
-    background: $73DFFF
-
-    
-gray_coloring: &gray
-    foreground: $0A00B8
-    background: $464646
-
+    text: "$(P) Common Plugins"
     
 
 UIHeader: !group
-    geometry: 840x20
+    geometry: 0x40 x 840x20
     
     children:
         - !caLabel
-            background: $00000000
+            background: *transparent
             geometry: 10x0 x 110x20
             text: "Plugin Name"
             
         - !caLabel
-            background: $00000000
+            background: *transparent
             geometry: 150x0 x 110x20
             text: "Plugin Type"
             
         - !caLabel
-            background: $00000000
+            background: *transparent
             geometry: 300x0 x 40x20
             text: "Port"
         
         - !caLabel
-            background: $00000000
+            background: *transparent
             geometry: 407x0 x 60x20
             text: "Enable"
             
         - !caLabel
-            background: $00000000
+            background: *transparent
             geometry: 525x0 x 80x20
             text: "Blocking"
             
         - !caLabel
-            background: $00000000
+            background: *transparent
             geometry: 615x0 x 70x20
             text: "Dropped"
             
         - !caLabel
-            background: $00000000
+            background: *transparent
             geometry: 730x0 x 40x20
             text: "Free"
             
         - !caLabel
-            background: $00000000
+            background: *transparent
             geometry: 800x0 x 40x20
             text: "Rate"
 
@@ -68,68 +65,56 @@ UIRow: !group
 
     children:
         - !caLineEdit
-            background: $00000000
-            colorMode: caLineEdit::Static
+            <<: *string_display
             geometry: 10x1 x 110x18
             channel: $(P){Instance}:PortName_RBV
             
         - !caLineEdit
-            background: $00000000
-            colorMode: caLineEdit::Static
+            <<: *string_display
             geometry: 125x1 x 160x18
             channel: $(P){Instance}:PluginType_RBV
             
         - !caTextEntry
-            <<: *blue
-            colorMode: caLineEdit::Static
+            <<: *text_edit
             geometry: 290x0 x 60x20
             channel: $(P){Instance}:NDArrayPort
             
         - !caMenu
-            <<: *blue
-            colorMode: caMenu::Static
+            <<: *menu_select
             geometry: 355x0 x 80x20
             channel: $(P){Instance}:EnableCallbacks
             
         - !caLineEdit
-            <<: *gray
-            colorMode: caLineEdit::Alarm_Static
-            alignment: Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter
+            <<: *data_display
             geometry: 440x1 x 80x18
             channel: $(P){Instance}:EnableCallbacks_RBV
             
         - !caMenu
-            <<: *blue
-            colorMode: caMenu::Static
+            <<: *menu_select
             geometry: 525x0 x 80x20
             channel: $(P){Instance}:BlockingCallbacks
 
         - !caLineEdit
-            <<: *clear
-            colorMode: caLineEdit::Static
+            <<: *string_display
+            alignment: Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter    
             geometry: 610x1 x 80x18
             channel: $(P){Instance}:DroppedArrays_RBV
             
         - !caLineEdit
-            <<: *gray
-            colorMode: caLineEdit::Alarm_Static
-            alignment: Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter
+            <<: *data_display
             geometry: 695x1 x 80x18
             channel: $(P){Instance}:QueueFree
             
         - !caLineEdit
-            <<: *clear
-            colorMode: caLineEdit::Static
+            <<: *string_display
+            alignment: Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter    
             geometry: 780x1 x 80x18
             channel: $(P){Instance}:ArrayRate_RBV
             
         - !caRelatedDisplay
-            foreground: $000000
-            background: $73DFFF
+            <<: *related_display
             
             label: -More
-            stackingMode: !enum Menu
-            removeParent: false
             
             geometry: 865x0 x 60x20
             

@@ -1,0 +1,28 @@
+transparent:  &transparent   $00000000
+
+alarm_red:    &alarm_red     $E41E1E
+alarm_yellow: &alarm_yellow  $E4E41E  
+alarm_green:  &alarm_green   $1EE41E
+
+black:        &black         $242424
+
+grey_darker:  &grey_darker   $444444
+grey_dark:    &grey_dark     $646464
+grey:         &grey          $848484
+grey_light:   &grey_light    $A4A4A4
+grey_lighter: &grey_lighter  $C4C4C4
+
+gray_darker:  &gray_darker   $444444
+gray_dark:    &gray_dark     $646464
+gray:         &gray          $848484
+gray_light:   &gray_light    $A4A4A4
+gray_lighter: &gray_lighter  $C4C4C4
+
+white:        &white         $E4E4E4
+
+
+edit_blue:    &edit_blue     $57CAE4
+menu_green:   &menu_green    $358400
+link_pink:    &link_pink     $D494E4
+link_purple:  &link_purple   $9494E4
+header_blue:  &header_blue   $003584
