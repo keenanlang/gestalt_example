@@ -59,8 +59,8 @@ UIHeader: !group
             text: "Rate"
 
             
-UIRow: !group
-    geometry: 935x25
+UIRow: !repeat
+    repeat_over: "plugins"
 
     children:
         - !caLineEdit
