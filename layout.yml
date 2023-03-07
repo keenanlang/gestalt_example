@@ -3,6 +3,8 @@
 
 Form: !Form
     styleSheet: !string "QWidget#Form {background: rgba(187, 187, 187, 255);}"
+    
+    margins: 5x5x5x5
 
 UILabel: !caLabel
     geometry: 0x6 x 935x25
@@ -15,46 +17,54 @@ UILabel: !caLabel
     
 
 UIHeader: !group
-    geometry: 0x40 x 840x20
+    geometry: 0x40 x 0x0
     
     children:
         - !caLabel
             background: *transparent
+            alignment: Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter    
             geometry: 10x0 x 110x20
             text: "Plugin Name"
             
         - !caLabel
             background: *transparent
+            alignment: Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter    
             geometry: 150x0 x 110x20
             text: "Plugin Type"
             
         - !caLabel
             background: *transparent
+            alignment: Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter    
             geometry: 300x0 x 40x20
             text: "Port"
         
         - !caLabel
             background: *transparent
+            alignment: Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter    
             geometry: 407x0 x 60x20
             text: "Enable"
             
         - !caLabel
             background: *transparent
+            alignment: Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter    
             geometry: 525x0 x 80x20
             text: "Blocking"
             
         - !caLabel
             background: *transparent
-            geometry: 615x0 x 70x20
+            alignment: Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter    
+            geometry: 615x0 x 75x20
             text: "Dropped"
             
         - !caLabel
             background: *transparent
-            geometry: 730x0 x 40x20
+            alignment: Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter    
+            geometry: 715x0 x 40x20
             text: "Free"
             
         - !caLabel
             background: *transparent
+            alignment: Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter    
             geometry: 800x0 x 40x20
             text: "Rate"
 
@@ -62,6 +72,10 @@ UIHeader: !group
 UIRow: !repeat
     repeat_over: "plugins"
 
+    geometry: 0x71 x 0x0
+    
+    padding: 6
+        
     children:
         - !caLineEdit
             <<: *string_display
