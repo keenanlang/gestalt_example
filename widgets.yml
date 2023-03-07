@@ -27,3 +27,8 @@ related_display: &related_display
     
     removeParent: false
     stackingMode: !enum Menu
+
+centered_label: &centered_label
+    foreground: *black
+    background: *transparent
+    alignment: Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter 
